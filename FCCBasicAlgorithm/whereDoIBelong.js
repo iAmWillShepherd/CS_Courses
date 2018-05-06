@@ -4,11 +4,12 @@ function getIndexToIns(arr, num) {
   // Find my place in this sorted array.
   arr.push(num);
   const sortedArray = arr.sort(function(a, b) {
-    if (a < b) {
-      return -1;
-    } else {
-      return 1;
-    }
+    // if (a < b) {
+    //   return -1;
+    // } else {
+    //   return 1;
+    // }
+    return a - b;
   });
   const numIndex = sortedArray.indexOf(num);
   // return num;
