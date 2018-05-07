@@ -16,3 +16,11 @@ function destroyer(arr, ...args) {
 const d = destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 console.log(d);
+
+// simplifying by returning filtered array using includes to check if eleemnt is NOT in args array
+function dest(arr, ...args) {
+  return arr.filter(element => !args.includes(element));
+}
+
+const des = dest([1, 2, 3, 1, 2, 3], 2, 3);
+console.log(des);
