@@ -8,7 +8,7 @@ function destroyer(arr, ...args) {
   const seekArr = arr.filter(
     // filter arr array for ->
     // any element not present in args array since indexOf -1 mean element not found
-    element => args.indexOf(element) < 0
+    element => args.indexOf(element) === -1
   );
   return seekArr;
 }
