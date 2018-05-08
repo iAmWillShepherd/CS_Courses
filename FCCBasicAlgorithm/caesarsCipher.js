@@ -36,3 +36,11 @@ console.log(code);
 
 // console.log('S'.charCodeAt());
 // console.log(String.fromCharCode(83));
+
+// Advance code solution
+function rot13(str) {
+  // LBH QVQ VG!
+  return str.replace(/[A-Z]/g, L =>
+    String.fromCharCode(L.charCodeAt(0) % 26 + 65)
+  );
+}
