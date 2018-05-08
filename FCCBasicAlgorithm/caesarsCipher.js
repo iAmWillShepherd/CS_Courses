@@ -3,11 +3,36 @@
 // Write a function which takes a ROT13 encoded string as input and returns a decoded string.
 // All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
 
+/*jshint esversion: 6 */
 function rot13(str) {
   // LBH QVQ VG!
-
-  return str;
+  const arr = str.split("");
+  let arrNum = [];
+  let strNum;
+  //console.log(arr);
+  for (let i = 0; i < arr.length; i++) {
+    let charCode = arr[i].charCodeAt();
+    if (charCode < 65 || charCode > 90) {
+      charCode = charCode - 13;
+    }
+    let convert = charCode - 13;
+    //console.log(convert);
+    // charCode range is 65-90
+    if (convert < 65) {
+      convert = 91 - (65 - convert);
+    }
+    arrNum.push(convert);
+  }
+  //console.log(arrNum);
+  strNum = String.fromCharCode(...arrNum);
+  //console.log(strNum)
+  return strNum;
 }
 
 // Change the inputs below to test
-rot13("SERR PBQR PNZC");
+const code = rot13("SERR PBQR PNZC");
+
+console.log(code);
+
+// console.log('S'.charCodeAt());
+// console.log(String.fromCharCode(83));
