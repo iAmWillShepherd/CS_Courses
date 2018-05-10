@@ -5,29 +5,13 @@
 /*jshint esversion: 6 */
 
 function diffArray(arr1, arr2) {
-  let newArr = arr1.concat(arr2);
-  console.log(newArr);
-  let diffArr = [];
-  for (let j = 0; j <= newArr.length + 1; j++) {
-    console.log(newArr);
-    console.log(newArr.length);
-    for (let i = 1; i < newArr.length; i++) {
-      let temp = newArr[0];
-      if (temp === newArr[i]) {
-        newArr.splice(0, 1);
-        console.log(newArr);
-        console.log(newArr.length);
-        newArr.splice(i - 1, 1);
-        console.log(newArr);
-        console.log(newArr.length);
-      }
-    }
-  }
+  let Arr1 = arr1.filter(e => !arr2.includes(e));
+  let Arr2 = arr2.filter(e => !arr1.includes(e));
+  console.log(Arr1, Arr2);
+  let newArr = Arr1.concat(Arr2);
   return newArr;
 }
 
-//diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
-//console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 console.log(
   diffArray(
     ["andesite", "grass", "dirt", "pink wool", "dead shrub"],
@@ -35,6 +19,6 @@ console.log(
   )
 );
 
-testArr = [1];
-testArr.splice(0, 1);
-console.log(testArr);
+// testArr = [1];
+// testArr.splice(0, 1);
+// console.log(testArr);
