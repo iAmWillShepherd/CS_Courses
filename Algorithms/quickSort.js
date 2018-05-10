@@ -14,10 +14,10 @@ function quicksort(arr) {
     for (let i = 1; i < arr.length; i++) {
       if (arr[i] < pivot) {
         less.push(arr[i]);
-        //console.log(less)
+        console.log(less);
       } else {
         more.push(arr[i]);
-        //console.log(more)
+        console.log(more);
       }
     }
     let sorted = []; // new array to perform concat
